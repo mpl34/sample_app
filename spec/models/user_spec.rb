@@ -14,7 +14,14 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
 
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
 
   it { should be_valid }
 
@@ -117,6 +124,8 @@ end
       expect(@user.reload.email).to eq mixed_case_email.downcase
     end
   end
+
+
 
 
 end
