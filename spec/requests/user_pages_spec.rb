@@ -156,10 +156,9 @@ describe "signup" do
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
-
-
-
   end
+
+
 
 
 end
