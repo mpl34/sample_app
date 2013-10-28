@@ -1,0 +1,116 @@
+<%- model_class = Exercise -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= link_to exercise.name, exercise_path(exercise) %></td>
+        <td><%= exercise.user_id %></td>
+        <td><%=l exercise.created_at %></td>
+        <td>
+          <% if current_user.admin? || current_user?(exercise.user) %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_exercise_path(exercise), :class => 'btn btn-mini' %>
+          <%= link_to t('.delete', :default => t("helpers.links.delete")),
+                      exercise_path(exercise),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+
+          <% end %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_exercise_path,
+            :class => 'btn btn-primary' %>
+
+
+
+<!-- 
+<h1>Listing exercises</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sets</th>
+      <th>Reps</th>
+      <th>Time</th>
+      <th>Rest</th>
+      <th>Side</th>
+      <th>Description</th>
+      <th>Text</th>
+      <th>Area</th>
+      <th>Equipment</th>
+      <th>Type</th>
+      <th>String</th>
+      <th>Best for</th>
+      <th>Eb link</th>
+      <th>Eb article</th>
+      <th>Abstract</th>
+      <th>Video link</th>
+      <th>Image1</th>
+      <th>String</th>
+      <th>Image2</th>
+      <th>Image3</th>
+      <th>Image4</th>
+      <th>Created by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= exercise.name %></td>
+        <td><%= exercise.sets %></td>
+        <td><%= exercise.reps %></td>
+        <td><%= exercise.time %></td>
+        <td><%= exercise.rest %></td>
+        <td><%= exercise.side %></td>
+        <td><%= exercise.description %></td>
+        <td><%= exercise.text %></td>
+        <td><%= exercise.area %></td>
+        <td><%= exercise.equipment %></td>
+        <td><%= exercise.type %></td>
+        <td><%= exercise.string %></td>
+        <td><%= exercise.best_for %></td>
+        <td><%= exercise.eb_link %></td>
+        <td><%= exercise.eb_article %></td>
+        <td><%= exercise.abstract %></td>
+        <td><%= exercise.video_link %></td>
+        <td><%= exercise.image1 %></td>
+        <td><%= exercise.string %></td>
+        <td><%= exercise.image2 %></td>
+        <td><%= exercise.image3 %></td>
+        <td><%= exercise.image4 %></td>
+        <td><%= exercise.user_id %></td>
+        <td><%= link_to 'Show', exercise %></td>
+        <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
+        <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Exercise', new_exercise_path %> -->

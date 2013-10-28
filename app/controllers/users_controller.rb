@@ -12,6 +12,8 @@ before_action :signed_in_user,
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @exercises = @user.exercises.paginate(page: params[:page])
+
   end
 
    def new

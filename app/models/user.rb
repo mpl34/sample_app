@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_many :exercises, dependent: :destroy
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
@@ -28,6 +29,10 @@ class User < ActiveRecord::Base
 
    def feed
     Micropost.from_users_followed_by(self)
+  end
+
+    def efeed
+    Exercise.from_users_followed_by(self)
   end
 
    def following?(other_user)

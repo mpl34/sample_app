@@ -1,0 +1,142 @@
+<%= form_for @exercise, :html => { :class => 'form-horizontal' } do |f| %>
+ <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sets, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :sets, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reps, :class => 'control-label' %>
+      <div class="controls">
+    <%= f.number_field :reps, :class => 'number_field' %>
+  </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :time , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.number_field :time , :class => 'number_field' %>
+  </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rest , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.number_field :rest , :class => 'number_field' %>
+  </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :side , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :side , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :description , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :description , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :text , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :text , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :area , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :area , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :equipment , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :equipment , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :type , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :type , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :string , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :string , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :best_for , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_area :best_for , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :eb_link , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :eb_link , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :eb_article , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :eb_article , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :abstract , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_area :abstract , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :video_link , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :video_link , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :image1 , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :image1 , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :string , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :string , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :image2 , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :image2 , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :image3 , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :image3 , :class => 'text_field' %>
+  </div></div>
+  <div class="control-group">
+    <%= f.label :image4 , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.text_field :image4 , :class => 'text_field' %>
+  </div></div>
+<!--   <div class="control-group">
+    <%= f.label :user_id , :class => 'control-label' %>
+      <div class="controls">
+    <%= f.number_field :user_id , :class => 'number_field' %>
+      </div>
+  </div> -->
+   <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                exercises_path, :class => 'btn' %>
+  </div>
+  <!-- <div class="actions">
+    <%= f.submit %>
+  </div> -->
+<% end %>

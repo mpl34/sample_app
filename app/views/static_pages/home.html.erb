@@ -8,13 +8,22 @@
         <%= render 'shared/stats' %>
       </section>
       <section>
-        <%= render 'shared/micropost_form' %>
+       <%= link_to t('.new', :default => t("helpers.links.new Exercise")),
+            new_exercise_path,
+          :class => 'btn btn-info' %>
+
+      <!--   <%= render 'shared/micropost_form' %> -->
       </section>
     </aside>
      <div class="span8">
+      <h3>Exercises Feed</h3>
+      <%= render 'shared/efeed' %>
+    </div>
+    <!--  <div class="span8">
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
-    </div>
+    </div> -->
+    
   </div>
 <% else %>
 	<div class="center hero-unit">

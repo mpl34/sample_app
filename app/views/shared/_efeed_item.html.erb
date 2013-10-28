@@ -1,0 +1,15 @@
+<li id="<%= efeed_item.id %>">
+  <%= link_to gravatar_for(efeed_item.user), efeed_item.user %>
+  <span class="user">
+    <%= link_to efeed_item.user.name, efeed_item.user %>
+  </span>
+  <span class="content"><%= link_to efeed_item.name, exercise_path(efeed_item) %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(efeed_item.created_at) %> ago.
+  </span>
+   <% if current_user?(efeed_item.user) %>
+    <%= link_to "delete", efeed_item, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: efeed_item.name %>
+  <% end %>
+</li>

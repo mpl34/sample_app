@@ -1,0 +1,120 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @exercise.sets %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @exercise.reps %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @exercise.time %>
+</p>
+
+<p>
+  <strong>Rest:</strong>
+  <%= @exercise.rest %>
+</p>
+
+<p>
+  <strong>Side:</strong>
+  <%= @exercise.side %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise.description %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @exercise.text %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @exercise.area %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @exercise.equipment %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @exercise.type %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @exercise.string %>
+</p>
+
+<p>
+  <strong>Best for:</strong>
+  <%= @exercise.best_for %>
+</p>
+
+<p>
+  <strong>Eb link:</strong>
+  <%= @exercise.eb_link %>
+</p>
+
+<p>
+  <strong>Eb article:</strong>
+  <%= @exercise.eb_article %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @exercise.abstract %>
+</p>
+
+<p>
+  <strong>Video link:</strong>
+  <%= @exercise.video_link %>
+</p>
+
+<p>
+  <strong>Image1:</strong>
+  <%= @exercise.image1 %>
+</p>
+
+<p>
+  <strong>String:</strong>
+  <%= @exercise.string %>
+</p>
+
+<p>
+  <strong>Image2:</strong>
+  <%= @exercise.image2 %>
+</p>
+
+<p>
+  <strong>Image3:</strong>
+  <%= @exercise.image3 %>
+</p>
+
+<p>
+  <strong>Image4:</strong>
+  <%= @exercise.image4 %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @exercise.user_id %>
+</p>
+ <div class="form-actions">
+<%= link_to 'Edit', edit_exercise_path(@exercise), :class => 'btn btn-primary' %> 
+<%= link_to 'Back', exercises_path, :class => 'btn' %>
+</div>
